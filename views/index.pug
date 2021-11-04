@@ -5,4 +5,15 @@ block content
   p Welcome to #{title}
   p This is Ruthwik's local host
   //- a(class='button') Press Me
-  <button (type="button", class = "btn-btn-secondary")>PressMe</button>
+  
+  button(type="button", class="btn btn-primary", onclick="update()") Press Me for the contents
+  |
+  div(id="target") Display
+  a(href = '/zebra') Zebra Page link
+  |
+  script. 
+    let client_count = 0;
+    function update() {
+      client_count = client_count + 1;
+      document.getElementById("target").innerHTML = `Value now ${client_count}`  ;
+      }
